@@ -14,17 +14,30 @@ h2 {
     color: #8B4513;
     font-weight: bold;
     text-align: center;
+    letter-spacing: 1px;
 }
 
 h1 {
     font-size: 2.5em;
     margin-bottom: 20px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #f4b400;
+    padding-bottom: 10px;
 }
 
 h2 {
     font-size: 1.8em;
     margin-top: 30px;
     margin-bottom: 15px;
+    text-transform: capitalize;
+}
+
+/* Estilo para los párrafos */
+p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    text-align: justify;
 }
 
 /* Estilo para las imágenes */
@@ -32,24 +45,40 @@ img {
     max-width: 100%;
     height: auto;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     margin-bottom: 20px;
+}
+
+img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 /* Estilo para listas de ingredientes */
 ul {
     list-style-type: square;
     padding-left: 20px;
+    margin-bottom: 20px;
 }
 
 ul li {
     font-size: 1.1em;
     margin: 10px 0;
+    color: #333;
+}
+
+ul li::before {
+    content: '✓';
+    color: #f4b400;
+    font-weight: bold;
+    margin-right: 8px;
 }
 
 /* Estilo para listas ordenadas (paso a paso) */
 ol {
     padding-left: 20px;
+    margin-bottom: 20px;
 }
 
 ol li {
@@ -57,6 +86,11 @@ ol li {
     margin: 15px 0;
     padding-left: 10px;
     border-left: 4px solid #f4b400;
+    transition: background-color 0.3s ease;
+}
+
+ol li:hover {
+    background-color: #f9f9f9;
 }
 
 /* Estilo para tablas (aporte nutricional) */
@@ -68,6 +102,7 @@ table {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
     border-radius: 8px;
     overflow: hidden;
+    text-align: center;
 }
 
 table th,
@@ -81,10 +116,16 @@ th {
     background-color: #f4b400;
     color: #fff;
     font-weight: bold;
+    text-transform: uppercase;
 }
 
 td {
     background-color: #f9f9f9;
+    transition: background-color 0.3s ease;
+}
+
+td:hover {
+    background-color: #f1f1f1;
 }
 
 table tr:last-child td {
@@ -99,6 +140,18 @@ video {
     width: 100%;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+/* Estilo de enlaces */
+a {
+    color: #8B4513;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #d2691e;
 }
 
 /* Botones para mejorar accesibilidad y navegación */
@@ -111,11 +164,12 @@ button {
     cursor: pointer;
     border-radius: 5px;
     margin: 10px 0;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 button:hover {
     background-color: #d2691e;
+    transform: translateY(-2px);
 }
 
 /* Estilo del pie de página */
@@ -124,6 +178,8 @@ footer {
     margin-top: 40px;
     font-size: 0.9em;
     color: #666;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
 }
 
 footer a {
@@ -148,6 +204,17 @@ footer a:hover {
 
     ul,
     ol {
+        font-size: 1em;
+    }
+
+    table,
+    audio,
+    video {
+        width: 100%;
+    }
+
+    p,
+    li {
         font-size: 1em;
     }
 }
